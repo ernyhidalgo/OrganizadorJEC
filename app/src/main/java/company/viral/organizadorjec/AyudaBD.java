@@ -38,6 +38,7 @@ public class AyudaBD extends SQLiteOpenHelper{
         /*creamos un string paquete q recibira los datos*/
 
         String paquete="";
+
         /*sentenciamos la bd  de forma q sera escrivible */
         SQLiteDatabase database = this.getWritableDatabase();
         /*creamos un contenedor para guardar los datos*/
