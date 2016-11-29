@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class AyudaBD extends SQLiteOpenHelper{
+
     /*constructor de la base de datos */
     /*cargo directamente desde el super*/
     /* (context cuando llamamos a la clase, el nombre de la base de datos, factory queda igual, version=1*/

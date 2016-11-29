@@ -3,6 +3,7 @@ package company.viral.organizadorjec;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,15 +14,26 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class Menusito extends AppCompatActivity
+import company.viral.organizadorjec.Fragment.AjustesF;
+import company.viral.organizadorjec.Fragment.CalendarioF;
+import company.viral.organizadorjec.Fragment.InicioF;
+import company.viral.organizadorjec.Fragment.PerfilF;
+import company.viral.organizadorjec.Fragment.ProfesoresF;
+
+public class MenuCentral extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menusito);
+        setContentView(R.layout.activity_menu_central);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //colocamos el fragment con que inicia el menu
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.contenedor,new InicioF()).commit();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +67,7 @@ public class Menusito extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menusito, menu);
+        getMenuInflater().inflate(R.menu.menu_central, menu);
         return true;
     }
 
@@ -80,16 +92,18 @@ public class Menusito extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new InicioF()).commit();
         } else if (id == R.id.nav_gallery) {
-
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new ProfesoresF()).commit();
         } else if (id == R.id.nav_slideshow) {
-
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new CalendarioF()).commit();
         } else if (id == R.id.nav_manage) {
-
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new AjustesF()).commit();
         } else if (id == R.id.nav_share) {
-
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new PerfilF()).commit();
         } else if (id == R.id.nav_send) {
 
         }

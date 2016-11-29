@@ -1,0 +1,58 @@
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="company.viral.organizadorjec.Fragment.InicioF">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+                        android:text="Proximos Dias"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/menudias"
+            android:layout_weight="1"/>
+
+        <TextView
+                        android:text="Proximos 15 Dias"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+
+
+        <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/menu15dias"
+            android:layout_weight="1"/>
+
+
+                <TextView
+                        android:text="Proximo Mes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/menumes"
+                        android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>
