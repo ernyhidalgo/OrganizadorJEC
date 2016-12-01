@@ -16,7 +16,8 @@ public class SQLite extends SQLiteOpenHelper {
     }
 
 
-    
+
+    //probando git
     //aqui se crea la tabla...
     @Override
     public void onCreate(SQLiteDatabase db) {
