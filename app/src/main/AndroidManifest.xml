@@ -23,13 +23,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Menucentral"
-            android:label="@string/title_activity_menucentral"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".MenuCentral"
-            android:label="@string/title_activity_menu_central"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".Menusito"
+            android:label="@string/title_activity_menusito"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
