@@ -35,6 +35,9 @@ public class MenuCentral extends AppCompatActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.contenedor,new InicioF()).commit();
 
+
+        //este es el apartado para el botonsito flotante
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +46,8 @@ public class MenuCentral extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -96,12 +101,16 @@ public class MenuCentral extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             fragmentManager.beginTransaction().replace(R.id.contenedor,new InicioF()).commit();
+
         } else if (id == R.id.nav_gallery) {
             fragmentManager.beginTransaction().replace(R.id.contenedor,new ProfesoresF()).commit();
+
         } else if (id == R.id.nav_slideshow) {
             fragmentManager.beginTransaction().replace(R.id.contenedor,new CalendarioF()).commit();
+
         } else if (id == R.id.nav_manage) {
             fragmentManager.beginTransaction().replace(R.id.contenedor,new AjustesF()).commit();
+
         } else if (id == R.id.nav_share) {
             fragmentManager.beginTransaction().replace(R.id.contenedor,new PerfilF()).commit();
         } else if (id == R.id.nav_send) {

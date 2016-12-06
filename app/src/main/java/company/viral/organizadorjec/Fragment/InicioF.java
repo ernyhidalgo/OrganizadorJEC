@@ -26,7 +26,11 @@ public class InicioF extends Fragment {
 
         String[] menuDias = {   "Tare",
                                 "Trabajo",
-                                "Salida","Tare",
+                                "Salida",
+                "mas",
+                "mas",
+                "mas",
+                "Tare",
                 "Trabajo",
                 "Salida"};
 

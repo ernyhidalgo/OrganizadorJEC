@@ -4,19 +4,23 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_action_action_home"
             android:title="Inico" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_action_maps_local_library"
             android:title="Profesores" />
         <item
+            android:id="@+id/nav_materia"
+            android:icon="@drawable/ic_action_editor_insert_drive_file"
+            android:title="Materias" />
+        <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_action_action_event"
             android:title="Calendario" />
         <item
             android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_action_navigation_apps"
             android:title="Configuración" />
     </group>
 
@@ -24,11 +28,11 @@
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_action_action_account_box"
                 android:title="Perfil" />
             <item
                 android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_action_maps_directions_walk"
                 android:title="Salir" />
         </menu>
     </item>

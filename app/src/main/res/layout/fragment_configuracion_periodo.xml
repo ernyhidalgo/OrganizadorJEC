@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="company.viral.organizadorjec.Fragment.CalendarioF"
-    android:background="#8fbab5">
+    tools:context="company.viral.organizadorjec.Fragment.ConfiguracionPeriodoF"
+    android:background="#0b0b0b">
 
 
     <!-- TODO: Update blank fragment layout -->
