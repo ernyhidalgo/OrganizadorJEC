@@ -18,14 +18,17 @@ public class SQLite extends SQLiteOpenHelper {
     //aqui se crea la tabla...
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table usuarios (usuario text, password integer)");
+        db.execSQL("create table usuarios (id integer primary key autoincremet, usuario text primary key, clave text)");
+        db.execSQL("insert into usuarios values('0','admin','admin')");
+
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("drop table if exists usuarios");
-        db.execSQL("create table usuarios (usuario text, password integer");
+        db.execSQL("create table usuarios (id integer primary key autoincremet, usuario text primary key, clave text)");
+        db.execSQL("insert into usuarios values('0','admin','admin')");
+
 
     }
 }

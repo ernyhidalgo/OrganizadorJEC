@@ -11,52 +11,80 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//aqui empieza...
 public class MainActivity extends AppCompatActivity {
 
+    //creamos variables EditText para capturar los datos
     private EditText aetid,aetpass;
-    private Button abtnacep,abtnreg;
+    private Cursor fila;
 
+
+    //en este metodo SIEMPRE se dibuja la app correspondiente
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+    //antes de dibujar definimos las variables y a quienes pertecen en el layout
+
         aetid = (EditText) findViewById(R.id.etid);
         aetpass = (EditText) findViewById(R.id.etpass);
-        abtnacep = (Button) findViewById(R.id.btnacep);
-        abtnreg = (Button) findViewById(R.id.btnreg);
+
     }
 
+
+
+
+
+    //creamos los metodos con los que reaccionan los btn (onClick)
     /*metodo para entrar y buscar (en construccion.... explorando metodos)*/
     public void onClickAceptar (View view) {
 
         String auxn = aetid.getText().toString();
         String auxp = aetpass.getText().toString();
 
-        AyudaBD db = new AyudaBD(getApplicationContext(),null,null,1);
-        String buscar = new String();
+        SQLite admin = new SQLite(this,"administracion", null, 1);
+        SQLiteDatabase bd = admin.getWritableDatabase();
+
+        fila=bd.rawQuery("select usuario, clave from usuarios where usuario='"+auxn+"'and clave='"+auxp+"'",null);
 
 
-    /*validamos la cargada de datos*/
-        if (auxn.isEmpty()) {
 
-            Toast.makeText(getApplicationContext(), "Ingrese un Usuario", Toast.LENGTH_LONG).show();
+        if(fila.moveToFirst()==true){
 
-        } else if (auxp.isEmpty()){
+            //capturamos los valores del cursos y lo almacenamos en variable
+            String usua=fila.getString(0);
+            String pass=fila.getString(1);
 
-            Toast.makeText(getApplicationContext(), "Ingrese clave", Toast.LENGTH_LONG).show();
-        } else {
+            //preguntamos si los datos ingresados son iguales
+            if (auxn.equals(usua)&&auxp.equals(pass)){
 
+                //si son iguales entonces vamos a otra ventana
+                //Menu es una nueva actividad empty
+                Intent ven=new Intent(this,MenuCentral.class);
 
-            Intent i = new Intent(this,Menusito.class);
-            startActivity(i);
+                startActivity(ven);
+
+                //limpiamos las las cajas de texto
+                aetid.setText("");
+                aetpass.setText("");
+
+            }
+
+        }else {
+
+            Toast.makeText(getApplicationContext(), "Usuario o contraseña erroneo", Toast.LENGTH_LONG).show();
         }
+
+        bd.close();
     }
+
+
+    //metodo para entrar a la actividad de registro
+
     public void onClickRegistro(View view){
         Intent i = new Intent(this,Registro.class);
         startActivity(i);
-
     }
-
 
 }
