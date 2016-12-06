@@ -11,6 +11,10 @@
             android:icon="@drawable/ic_action_maps_local_library"
             android:title="Profesores" />
         <item
+            android:id="@+id/nav_materia"
+            android:icon="@drawable/ic_action_editor_insert_drive_file"
+            android:title="Materias" />
+        <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_action_action_event"
             android:title="Calendario" />
