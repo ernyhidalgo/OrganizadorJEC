@@ -2,6 +2,7 @@ package company.viral.organizadorjec;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +15,7 @@ import android.widget.Toast;
 public class Registro extends AppCompatActivity {
 
     private TextView aetidr,aetpassr,aetpasscr;
-    private Button abtnacepr,abtncanr;
+    Cursor check;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,8 +24,7 @@ public class Registro extends AppCompatActivity {
         aetidr = (EditText) findViewById(R.id.etidr);
         aetpassr = (EditText) findViewById(R.id.etpassr);
         aetpasscr = (EditText) findViewById(R.id.etpasscr);
-        abtnacepr = (Button) findViewById(R.id.btnacepr);
-        abtncanr = (Button) findViewById(R.id.btncanr);
+
 
     }
 
@@ -39,12 +39,39 @@ public class Registro extends AppCompatActivity {
         //verificamos QUE NADA QUEDE SIN LLENAR!!!
 
         //si la variable que acepta el nombre esta vacia nos pedira ingresar usuario
-        if (auxn.isEmpty()){
+        if (auxn.isEmpty()) {
 
-            Toast.makeText(getApplicationContext(),"Ingrese un Usuario",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Ingrese un Usuario", Toast.LENGTH_LONG).show();
 
-         //sino... si la clave es vacia entonces te pide que coloques una clave
-        }else if (auxp.equals("")){
+
+        }/*else if (auxn.length()>1) {
+
+                    SQLite admin = new SQLite(this, "administracion", null, 1);
+                    SQLiteDatabase bd = admin.getWritableDatabase();
+
+                    check = bd.rawQuery("select usuario from usuarios where usuario='" + auxn + "' ", null);
+
+                    check.moveToFirst();
+
+                    String validar = check.getString(0);
+
+                    if (auxn.equals(validar)) {
+
+                        Toast.makeText(getApplicationContext(), "Usuario usado", Toast.LENGTH_LONG).show();
+
+                        bd.close();
+
+                        aetidr.setText(" ");
+                    }
+
+
+
+
+
+
+
+                    //sino... si la clave es vacia entonces te pide que coloques una clave
+        }*/else if (auxp.equals("")){
 
             Toast.makeText(getApplicationContext(),"Ingrese una contraseña",Toast.LENGTH_LONG).show();
 
@@ -97,51 +124,6 @@ public class Registro extends AppCompatActivity {
 
 
 }
-
-        /*PRUEBA CON SQLITE
-        //validaciones correspondientes para el registro de usuario
-
-        //si la variable que acepta el nombre esta vacia nos pedira ingresar usuario
-        if (auxn.isEmpty()){
-
-            Toast.makeText(getApplicationContext(),"Ingrese un Usuario",Toast.LENGTH_LONG).show();
-        //sino... si la clave es vacia entonces te pide que coloques una clave
-        }else if (auxp == null){
-
-            Toast.makeText(getApplicationContext(),"Ingrese una contraseña",Toast.LENGTH_LONG).show();
-
-        //si la clave de confirmacion es igual a la clave entonces guardalo en el sistema
-        }else if (auxp.equals(auxc)){
-
-
-
-            //al cumplirse todas las validaciones procedemos a guardar el usuario en la tabla correspondiente
-            //objeto de tipo clase donde estamos guardando
-            //instanciamos y llenamos con getAplo... nombre null xq ya lo tenemos en la BASE DE DATOS
-            // null por q factory no importa y 1 el tipo de version
-            AyudaBD db = new AyudaBD(getApplicationContext(),null,null,1);
-
-            //llenamos el metodo para enviar los parametros
-            String paquete = db.guardar(auxn,auxp);
-            //mostramos el mensaje si no se cargobien la BD
-            Toast.makeText(getApplicationContext(),paquete,Toast.LENGTH_SHORT).show();
-
-            // de ser positivo entonces limpiamos los campos
-            aetidr.setText("");
-            aetpassr.setText("");
-            aetpasscr.setText("");
-            //mostramos mensaje de aceptacion y volvemos a la pantalla principal
-
-            Toast.makeText(getApplicationContext(),"Usuario creado de forma exitosa",Toast.LENGTH_LONG).show();
-
-            Intent i = new Intent(this,MainActivity.class);
-            startActivity(i);
-
-        }else {
-            Toast.makeText(getApplicationContext(),"La confirmacion no coincide",Toast.LENGTH_LONG).show();
-        }*/
-
-
 
     /*accion para el boton cancelar o regresar*/
 
