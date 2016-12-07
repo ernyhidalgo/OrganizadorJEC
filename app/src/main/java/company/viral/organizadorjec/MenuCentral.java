@@ -195,8 +195,11 @@ public class MenuCentral extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
             fragmentManager.beginTransaction().replace(R.id.contenedor,new PerfilF()).commit();
+
         } else if (id == R.id.nav_send) {
 
+        } else if (id == R.id.nav_materia){
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new ConfiguracionMateriaF()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

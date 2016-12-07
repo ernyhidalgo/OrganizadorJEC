@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:background="#64ffffff"
+    android:background="#ffffff"
     android:layout_height="match_parent">
 
     <TextView
@@ -57,7 +57,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:src="@drawable/ic_action_action_note_add"
+                android:src="@drawable/ic_action_device_add_alarm"
                 android:id="@+id/imageView3"
                 android:layout_weight="1" />
 
@@ -92,7 +92,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:src="@drawable/ic_action_action_event"
+                android:src="@drawable/ic_action_editor_insert_drive_file"
                 android:id="@+id/imageView6" />
 
             <TextView
