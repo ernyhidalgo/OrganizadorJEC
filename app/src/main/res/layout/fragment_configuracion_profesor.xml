@@ -2,19 +2,99 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="company.viral.organizadorjec.Fragment.ConfiguracionProfesorF"
-    android:background="#347c0b">
+    tools:context=".FracmentPopUp.ConfiguracionProfesorF">
 
-
-    <!-- TODO: Update blank fragment layout -->
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <ListView
+        <TextView
+            android:text="Registro de Profesores"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="24sp"
+            tools:textColor="@color/colorPrimary"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <EditText
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/etnombreprofesor"
+                android:hint="Nombre del profesor"
+                android:layout_width="match_parent" />
+
+            <TextView
+                android:text="Elija primera caracteristica:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView8" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="35dp" />
+
+            <TextView
+                android:text="Elija segunda caracteristica:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView11" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner2" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:hint="Si lo desea ingrese comentarios del profesor"
+                android:id="@+id/etcomentarioprofesor" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:text="Agregar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnagregarprofesor"
+                android:layout_weight="1"
+                style="@android:style/Widget.Button" />
+
+            <Button
+                android:text="Editar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button"
+                android:layout_weight="1"
+                style="@android:style/Widget.Button" />
+        </LinearLayout>
+
     </LinearLayout>
+
 </FrameLayout>

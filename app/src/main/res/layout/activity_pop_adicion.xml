@@ -33,14 +33,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:src="@drawable/ic_action_maps_local_library"
-                android:id="@+id/imageView2"
+                android:id="@+id/imageViewprofesor"
                 android:layout_weight="1" />
 
             <TextView
                 android:text="Profesor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView4"
+                android:id="@+id/textViewprofesor"
                 android:gravity="center"
                 android:textSize="24sp"
                 android:layout_weight="1" />
@@ -58,14 +58,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:src="@drawable/ic_action_device_add_alarm"
-                android:id="@+id/imageView3"
+                android:id="@+id/imageViewactividad"
                 android:layout_weight="1" />
 
             <TextView
                 android:text="Actividad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView5"
+                android:id="@+id/textViewactividad"
                 android:gravity="center"
                 android:textSize="24sp"
                 android:layout_weight="1" />
@@ -93,13 +93,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:src="@drawable/ic_action_editor_insert_drive_file"
-                android:id="@+id/imageView6" />
+                android:id="@+id/imageViewmateria" />
 
             <TextView
                 android:text="Materia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView7"
+                android:id="@+id/textViewmateria"
                 android:gravity="center"
                 android:textSize="24sp"
                 android:layout_weight="1" />
@@ -117,13 +117,71 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:src="@drawable/ic_action_action_event"
-                android:id="@+id/imageView8" />
+                android:id="@+id/imageViewperiodo" />
 
             <TextView
-                android:text="Periodo de Actividad"
+                android:text="Periodo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView9"
+                android:id="@+id/textViewperiodo"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+    </LinearLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/btnagregarcaracteristica">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:src="@drawable/ic_action_action_account_box"
+                android:id="@+id/imageViewcaracteristica" />
+
+            <TextView
+                android:text="Caracteristicas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewCarac"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/btnagregarTarea">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:src="@drawable/ic_action_navigation_apps"
+                android:id="@+id/imageViewtarea" />
+
+            <TextView
+                android:text="Tareas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewtarea"
                 android:gravity="center"
                 android:textSize="24sp"
                 android:layout_weight="1" />
@@ -156,7 +214,8 @@
                 android:text="Cancelar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/btnpopupcerrar" />
+                android:id="@+id/btnpopupcerrar"
+                style="@android:style/Widget.Button" />
         </LinearLayout>
 
         <LinearLayout

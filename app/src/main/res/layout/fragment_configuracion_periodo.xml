@@ -2,19 +2,117 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="company.viral.organizadorjec.Fragment.ConfiguracionPeriodoF"
-    android:background="#0b0b0b">
+    tools:context=".FracmentPopUp.ConfiguracionPeriodoF">
 
-
-    <!-- TODO: Update blank fragment layout -->
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ListView
+        <TextView
+            android:text="Inserte periodo de trabajo"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:gravity="center"
+            android:textSize="24sp"
+            tools:textColor="@android:color/holo_blue_dark" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="36dp" />
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etnombreperiodo"
+            android:hint="Nombre del periodo a insertar"
+            android:gravity="center"
+            android:layout_width="match_parent" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:text="Inicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnfragfecha"
+                android:layout_weight="1"
+                style="@android:style/Widget.Button" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/fechaini"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:layout_weight="1"
+                tools:textColor="@android:color/holo_blue_dark" />
+
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="36dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:text="Final"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnfragfinal"
+                android:layout_weight="1"
+                style="@android:style/Widget.Button" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/fechafinal"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:layout_weight="1"
+                tools:textColor="@android:color/holo_blue_dark" />
+
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="36dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:text="Agregar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/agregarperiodo"
+                android:layout_weight="1"
+                style="@android:style/Widget.Button"/>
+            <Button
+                android:text="Editar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editarperiodo"
+                android:layout_weight="1"
+                style="@android:style/Widget.Button"/>
+        </LinearLayout>
+
     </LinearLayout>
+
 </FrameLayout>

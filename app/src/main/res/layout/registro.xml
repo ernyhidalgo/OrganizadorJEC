@@ -75,9 +75,10 @@
                 android:text="Aceptar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/btnacepr"
                 android:layout_weight="1"
-                android:onClick="onClickAceptar" />
+                style="@android:style/Widget.Button"
+                android:id="@+id/btnaceptarregistro"
+                android:onClick="onClickAceptarR" />
 
             <Button
                 android:text="Cancelar"
@@ -85,7 +86,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/btncanr"
                 android:layout_weight="1"
-                android:onClick="onClickRegresar" />
+                android:onClick="onClickRegresar"
+                style="@android:style/Widget.Button" />
         </LinearLayout>
     </LinearLayout>
 

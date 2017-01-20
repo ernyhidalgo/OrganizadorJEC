@@ -2,8 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="company.viral.organizadorjec.Fragment.ConfiguracionMateriaF"
-    android:background="#a6b9cf">
+    tools:context=".FracmentPopUp.ConfiguracionMateriaF">
 
 
     <!-- TODO: Update blank fragment layout -->
@@ -11,10 +10,94 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <ListView
+        <TextView
+            android:text="Registro de Materias"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="24sp"
+            tools:textColor="@color/colorPrimary"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <EditText
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/etnombremateria"
+                android:hint="Intoduzca su Materia"
+                android:layout_width="match_parent" />
+
+            <TextView
+                android:text="Elija un profesor:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView8" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="35dp" />
+
+            <TextView
+                android:text="Elija un periodo y entidad:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView11" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner2" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:hint="Si lo desea ingrese comentarios de la materia"
+                android:id="@+id/etcomentariomateria" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:text="Agregar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnagregarmateriaf"
+                android:layout_weight="1"
+                style="@android:style/Widget.Button"
+                />
+
+            <Button
+                android:text="Editar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button"
+                android:layout_weight="1"
+                style="@android:style/Widget.Button" />
+        </LinearLayout>
+
     </LinearLayout>
+
 </FrameLayout>

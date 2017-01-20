@@ -17,11 +17,11 @@
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_action_action_event"
-            android:title="Calendario" />
+            android:title="Periodos" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_action_navigation_apps"
-            android:title="Configuración" />
+            android:title="Caracteristicas" />
     </group>
 
     <item android:title="Usuario">

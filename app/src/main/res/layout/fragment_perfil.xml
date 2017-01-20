@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="company.viral.organizadorjec.Fragment.InicioF"
+    tools:context="company.viral.organizadorjec.FragmentMenu.InicioF"
     android:background="#99d0e1">
 
 
@@ -13,8 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ListView
+
+        <TextView
+            android:text="TextView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:id="@+id/pruebaid" />
     </LinearLayout>
 </FrameLayout>
