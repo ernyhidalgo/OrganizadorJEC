@@ -3,8 +3,7 @@ package company.viral.organizadorjec.FracmentPopUp;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
-import android.icu.util.Calendar;
-import android.icu.util.TimeZone;
+import java.util.Calendar;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -37,20 +36,61 @@ public class ConfiguracionPeriodoF extends Fragment {
 
         //creamos las variables que van a interactuar con el layout
         //TextView
-        TextView inifecha = (TextView)view.findViewById(R.id.fechaini);
-        TextView finalfecha = (TextView)view.findViewById(R.id.fechafinal);
+        final TextView inifecha = (TextView)view.findViewById(R.id.fechaini);
+        final TextView finalfecha = (TextView)view.findViewById(R.id.fechafinal);
         //botones
         Button btnini = (Button)view.findViewById(R.id.btnfragfecha);
         Button btnfinal = (Button)view.findViewById(R.id.btnfragfinal);
         //variables para el datepick
 
-        //oncli
-
+        //onclick para la insercion de fecha
         btnini.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment picker = new DatePickerFragment();
-                picker.show(getFragmentManager(), "datePicker");
+                final Calendar calendario = Calendar.getInstance();
+                int yy = calendario.get(Calendar.YEAR);
+                int mm = calendario.get(Calendar.MONTH);
+                int dd = calendario.get(Calendar.DAY_OF_MONTH);
+
+
+                DatePickerDialog datePicker = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                        String fecha = String.valueOf(dayOfMonth) +"-"+String.valueOf(monthOfYear+01)
+                                +"-"+String.valueOf(year);
+                        
+                        inifecha.setText(fecha);
+
+                    }
+                }, yy, mm, dd);
+
+                datePicker.show();
+
+            }
+        });
+
+        btnfinal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar calendario = Calendar.getInstance();
+                int yy = calendario.get(Calendar.YEAR);
+                int mm = calendario.get(Calendar.MONTH);
+                int dd = calendario.get(Calendar.DAY_OF_MONTH);
+
+
+                DatePickerDialog datePicker = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                        String fecha = String.valueOf(dayOfMonth) +"-"+String.valueOf(monthOfYear+1)
+                                +"-"+String.valueOf(year);
+                        finalfecha.setText(fecha);
+
+                    }
+                }, yy, mm, dd);
+
+                datePicker.show();
 
             }
         });

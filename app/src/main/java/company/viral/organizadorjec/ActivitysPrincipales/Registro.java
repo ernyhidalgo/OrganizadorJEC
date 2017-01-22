@@ -91,6 +91,10 @@ public class Registro extends AppCompatActivity {
 
             Toast.makeText(this, "Datos del usuario cargados", Toast.LENGTH_SHORT).show();
 
+            Intent i = new Intent(this,MainActivity.class);
+            startActivity(i);
+            finish();
+
 
             //de ser incorrecto solo queda que las claves no coinciden..
         } else {
