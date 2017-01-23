@@ -34,7 +34,7 @@ public class SQLite extends SQLiteOpenHelper {
                 "foreign key(id_periodo) references periodo(id))");
 
         db.execSQL("create table periodo (id integer primary key autoincrement, " +
-                "nombre text, id_usuario integer, fechainicio integer, fechacierre integer," +
+                "nombre text, id_usuario integer, fechainicio text, fechacierre text," +
                 "foreign key(id_usuario) references usuarios(id))");
 
         db.execSQL("create table caracteristicas (id integer primary key autoincrement, " +
@@ -75,7 +75,7 @@ public class SQLite extends SQLiteOpenHelper {
                 "foreign key(id_periodo) references periodo(id))");
 
         db.execSQL("create table periodo (id integer primary key autoincrement, " +
-                "nombre text, id_usuario integer, fechainicio integer, fechacierre integer," +
+                "nombre text, id_usuario integer, fechainicio text, fechacierre text," +
                 "foreign key(id_usuario) references usuarios(id))");
 
         db.execSQL("create table caracteristicas (id integer primary key autoincrement, " +

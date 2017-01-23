@@ -35,6 +35,9 @@ public class ConfiguracionMateriaF extends Fragment {
             @Override
             public void onClick(View v) {
 
+                Bundle bundle=getActivity().getIntent().getExtras();
+                int identificar = bundle.getInt("identificador");
+
 
                 String auxnm = etmateriaf.getText().toString();
                 String auxcm = etcomentariomateriaf.getText().toString();
@@ -46,6 +49,7 @@ public class ConfiguracionMateriaF extends Fragment {
 
                 registromate.put("nombre",auxnm);
                 registromate.put("detalle",auxcm);
+
 
                 bd.insert("materias",null,registromate);
                 etmateriaf.setText("");

@@ -22,12 +22,15 @@ public class PeriodosF extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_periodos, container, false);
 
+        Bundle bundle=getActivity().getIntent().getExtras();
+        int identificar = bundle.getInt("identificador");
+
 
         SQLite admin = new SQLite(getContext(),"administracion",null,1);
         SQLiteDatabase bd = admin.getWritableDatabase();
 
 
-        buscador=bd.rawQuery("select nombre from periodo ",null);
+        buscador=bd.rawQuery("select nombre from periodo where id_usuario='"+identificar+"'",null);
 
         String [] listaperio = new String[buscador.getCount()];
 

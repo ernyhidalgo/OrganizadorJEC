@@ -24,21 +24,21 @@ public class InicioF extends Fragment {
 
 
 
-        String[] menuDias = {   "Tare",
+        String[] menuDias = {   "TAAAARREEEAAAA!!!!!!",
                                 "Trabajo",
                                 "Salida",
                 "mas",
                 "mas",
                 "mas",
-                "Tare",
+                "Tareaaaaaaaaa",
                 "Trabajo",
                 "Salida"};
 
-        String[] menu15Das = {  "Tare",
+        String[] menu15Das = {  "Tareaaaaaaa",
                                 "Trabajo",
                                 "Salida"};
 
-        String[] menumes = {    "Tare",
+        String[] menumes = {    "Tareaaaaaaaaaa",
                                 "Trabajo",
                                 "Salida",
                                 "paseo de perro","comer"};
@@ -78,6 +78,7 @@ public class InicioF extends Fragment {
 
         return view ;
     }
+
 
 
 }

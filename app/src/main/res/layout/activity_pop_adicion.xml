@@ -27,6 +27,74 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:id="@+id/btnagregarperiodo">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:src="@drawable/ic_action_action_event"
+                android:id="@+id/imageViewperiodo" />
+
+            <TextView
+                android:text="Período"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewperiodo"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/btnagregarcaracteristica">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:src="@drawable/ic_action_action_account_box"
+                android:id="@+id/imageViewcaracteristica" />
+
+            <TextView
+                android:text="Atributos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewCarac"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="Profesor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:id="@+id/btnagregarprofesor">
 
             <ImageView
@@ -42,7 +110,66 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textViewprofesor"
                 android:gravity="center"
-                android:textSize="24sp"
+                android:textSize="20sp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/btnagregarmateria">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:src="@drawable/ic_action_editor_insert_drive_file"
+                android:id="@+id/imageViewmateria" />
+
+            <TextView
+                android:text="Materia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewmateria"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/btnagregarTarea">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:src="@drawable/ic_action_navigation_apps"
+                android:id="@+id/imageViewtarea" />
+
+            <TextView
+                android:text="Tareas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewtarea"
+                android:gravity="center"
+                android:textSize="20sp"
                 android:layout_weight="1" />
 
         </LinearLayout>
@@ -67,126 +194,10 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textViewactividad"
                 android:gravity="center"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:layout_weight="1" />
         </LinearLayout>
 
-    </LinearLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/btnagregarmateria">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:src="@drawable/ic_action_editor_insert_drive_file"
-                android:id="@+id/imageViewmateria" />
-
-            <TextView
-                android:text="Materia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textViewmateria"
-                android:gravity="center"
-                android:textSize="24sp"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/btnagregarperiodo">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:src="@drawable/ic_action_action_event"
-                android:id="@+id/imageViewperiodo" />
-
-            <TextView
-                android:text="Periodo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textViewperiodo"
-                android:gravity="center"
-                android:textSize="24sp"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-    </LinearLayout>
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/btnagregarcaracteristica">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:src="@drawable/ic_action_action_account_box"
-                android:id="@+id/imageViewcaracteristica" />
-
-            <TextView
-                android:text="Caracteristicas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textViewCarac"
-                android:gravity="center"
-                android:textSize="24sp"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/btnagregarTarea">
-
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:src="@drawable/ic_action_navigation_apps"
-                android:id="@+id/imageViewtarea" />
-
-            <TextView
-                android:text="Tareas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textViewtarea"
-                android:gravity="center"
-                android:textSize="24sp"
-                android:layout_weight="1" />
-
-        </LinearLayout>
     </LinearLayout>
 
     <Space

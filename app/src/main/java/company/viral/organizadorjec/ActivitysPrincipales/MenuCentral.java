@@ -39,7 +39,9 @@ import company.viral.organizadorjec.R;
 public class MenuCentral extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
     private PopupWindow popupadicion;
+
     private DrawerLayout posicionpopup;
     //agregue el cursor----------
     private Cursor nombreid;
@@ -59,8 +61,9 @@ public class MenuCentral extends AppCompatActivity
 
         //colocamos el fragment con que inicia el menu
 
+        //final FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.contenedor,new InicioF()).commit();
+        fragmentManager.beginTransaction().replace(R.id.contenedor,new InicioF(),"main").commit();
 
 
         //este es el apartado para el botonsito flotante
@@ -73,12 +76,12 @@ public class MenuCentral extends AppCompatActivity
             public void onClick(View view) {
 
                if(popupadicion!=null){
+
                     popupadicion.dismiss();
+
                }
 
-
-
-                //implementamos el popup
+               //implementamos el popup
                 LayoutInflater inflater = (LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
                 final View vistaadicion = inflater.inflate(R.layout.activity_pop_adicion,null);
 
@@ -87,16 +90,17 @@ public class MenuCentral extends AppCompatActivity
                         RelativeLayout.LayoutParams.WRAP_CONTENT
                 );
 
-
                 //luego de clicear y abrir el popup le decimos...
                 //si das al profe ve a profe
+
+
                 LinearLayout btnprofe = (LinearLayout) vistaadicion.findViewById(R.id.btnagregarprofesor);
                 btnprofe.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
                         FragmentManager fragmentManager = getSupportFragmentManager();
-                        fragmentManager.beginTransaction().replace(R.id.contenedor,new ConfiguracionProfesorF()).commit();
+                        fragmentManager.beginTransaction().replace(R.id.contenedor, new ConfiguracionProfesorF()).addToBackStack(null).commit();
                         popupadicion.dismiss();
 
                     }
@@ -144,15 +148,22 @@ public class MenuCentral extends AppCompatActivity
                     @Override
                     public void onClick(View v) {
                         popupadicion.dismiss();
+                        popupadicion=null;
                     }
                 });
 
 
                 //hubicamos donde queremos el popup
                 popupadicion.showAtLocation(posicionpopup, Gravity.CENTER,0,0 );
+
+                //aqui
+
+
+
             }
         });
 
+        //apartado del navigation drawer
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -186,8 +197,14 @@ public class MenuCentral extends AppCompatActivity
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+
+        } else if (popupadicion != null) {
+
+            popupadicion.dismiss();
+            popupadicion = null;
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("¿Desea Salir de la Aplicación?");
@@ -205,9 +222,11 @@ public class MenuCentral extends AppCompatActivity
                 }
             });
 
-            AlertDialog dialog=builder.create();
+            AlertDialog dialog = builder.create();
             dialog.show();
+
         }
+
     }
 
     @Override

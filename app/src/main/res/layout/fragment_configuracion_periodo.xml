@@ -11,7 +11,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:text="Inserte periodo de trabajo"
+            android:text="Inserte período de trabajo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView2"
@@ -28,7 +28,7 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/etnombreperiodo"
-            android:hint="Nombre del periodo a insertar"
+            android:hint="Nombre del período a insertar"
             android:gravity="center"
             android:layout_width="match_parent" />
 
