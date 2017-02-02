@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import company.viral.organizadorjec.ActivitysPrincipales.SQLite;
+import company.viral.organizadorjec.Clases.SQLite;
 import company.viral.organizadorjec.R;
 
 
@@ -22,33 +22,35 @@ public class CaracteristicasF extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_caracteristicas, container, false);
 
+        Bundle bundle=getActivity().getIntent().getExtras();
+        int identificar = bundle.getInt("identificador");
 
         SQLite admin = new SQLite(getContext(),"administracion",null,1);
         SQLiteDatabase bd = admin.getWritableDatabase();
 
 
-        buscador=bd.rawQuery("select nombre from caracteristicas ",null);
+        buscador=bd.rawQuery("select nombre from caracteristicas where id_usuario= '"+identificar+"' ",null);
 
-        String [] listamateria = new String[buscador.getCount()];
+        String [] listacaracteristica = new String[buscador.getCount()];
 
         int i=0;
         while (buscador.moveToNext()){
             String contenedor = buscador.getString(buscador.getColumnIndex("nombre"));
-            listamateria[i]=contenedor;
+            listacaracteristica[i]=contenedor;
             i++;
         }
 
         //adaptadores
         //adaptador dias
 
-        ListView listamate = (ListView) view.findViewById(R.id.listcaracticaf);
+        ListView listacaracticalw = (ListView) view.findViewById(R.id.listcaracticaf);
 
-        ArrayAdapter<String> listavistamate = new ArrayAdapter<String>(
+        ArrayAdapter<String> listavistacaracteristica= new ArrayAdapter<String>(
                 getActivity(),
-                android.R.layout.simple_list_item_1,listamateria);
+                android.R.layout.simple_list_item_1,listacaracteristica);
 
 
-        listamate.setAdapter(listavistamate);
+        listacaracticalw.setAdapter(listavistacaracteristica);
 
         return view ;
     }

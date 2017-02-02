@@ -24,9 +24,12 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import company.viral.organizadorjec.Clases.SQLite;
+import company.viral.organizadorjec.FracmentPopUp.ConfiguracionActividadF;
+import company.viral.organizadorjec.FracmentPopUp.ConfiguracionAtributoF;
+import company.viral.organizadorjec.FracmentPopUp.ConfiguracionTareaF;
 import company.viral.organizadorjec.FragmentMenu.CaracteristicasF;
 import company.viral.organizadorjec.FragmentMenu.PeriodosF;
-import company.viral.organizadorjec.FracmentPopUp.ConfiguracionActividadF;
 import company.viral.organizadorjec.FracmentPopUp.ConfiguracionMateriaF;
 import company.viral.organizadorjec.FracmentPopUp.ConfiguracionPeriodoF;
 import company.viral.organizadorjec.FracmentPopUp.ConfiguracionProfesorF;
@@ -91,16 +94,16 @@ public class MenuCentral extends AppCompatActivity
                 );
 
                 //luego de clicear y abrir el popup le decimos...
+
+
                 //si das al profe ve a profe
-
-
                 LinearLayout btnprofe = (LinearLayout) vistaadicion.findViewById(R.id.btnagregarprofesor);
                 btnprofe.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
                         FragmentManager fragmentManager = getSupportFragmentManager();
-                        fragmentManager.beginTransaction().replace(R.id.contenedor, new ConfiguracionProfesorF()).addToBackStack(null).commit();
+                        fragmentManager.beginTransaction().replace(R.id.contenedor, new ConfiguracionProfesorF()).commit();
                         popupadicion.dismiss();
 
                     }
@@ -141,6 +144,32 @@ public class MenuCentral extends AppCompatActivity
 
                     }
                 });
+                //si le das a periodo ve a atributo
+                LinearLayout btnatributos = (LinearLayout) vistaadicion.findViewById(R.id.btnagregarcaracteristica);
+                btnatributos.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        fragmentManager.beginTransaction().replace(R.id.contenedor,new ConfiguracionAtributoF()).commit();
+                        popupadicion.dismiss();
+
+                    }
+                });
+                //si le das a periodo ve a atributo
+                LinearLayout btnatareas = (LinearLayout) vistaadicion.findViewById(R.id.btnagregartarea);
+                btnatareas.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        fragmentManager.beginTransaction().replace(R.id.contenedor,new ConfiguracionTareaF()).commit();
+                        popupadicion.dismiss();
+
+                    }
+                });
+
+
                 //luego le decimos que cierre el popup con el boton
 
                 Button cerrarboton = (Button) vistaadicion.findViewById(R.id.btnpopupcerrar);
@@ -198,14 +227,16 @@ public class MenuCentral extends AppCompatActivity
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
 
-        } else if (popupadicion != null) {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+
+            drawer.closeDrawer(GravityCompat.START);
+        }else if (popupadicion != null) {
 
             popupadicion.dismiss();
             popupadicion = null;
-        } else {
+
+        }else{
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("¿Desea Salir de la Aplicación?");
             builder.setTitle("Alerta!");

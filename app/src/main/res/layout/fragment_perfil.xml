@@ -2,8 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="company.viral.organizadorjec.FragmentMenu.InicioF"
-    android:background="#99d0e1">
+    tools:context="company.viral.organizadorjec.FragmentMenu.PerfilF">
 
 
     <!-- TODO: Update blank fragment layout -->
@@ -14,10 +13,51 @@
         android:layout_height="match_parent">
 
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
         <TextView
-            android:text="TextView"
+            android:text="¿Que desea?"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/pruebaid" />
+            android:gravity="center"
+            android:textSize="24sp"
+            android:id="@+id/textView3" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+        <Button
+            android:text="Cambiar nombre de usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Button"
+            android:id="@+id/cnusuario" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+        <Button
+            android:text="Cambiar clave de usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Button"
+            android:id="@+id/ccusuario" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+        <Button
+            android:text="Establecer alarmas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Button"
+            android:id="@+id/ealarmas" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+        <Button
+            android:text="Cerrrar Sesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Button"
+            android:id="@+id/cerrarsesion" />
     </LinearLayout>
 </FrameLayout>

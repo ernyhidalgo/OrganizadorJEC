@@ -1,5 +1,7 @@
 package company.viral.organizadorjec.FragmentMenu;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import company.viral.organizadorjec.Clases.SQLite;
 import company.viral.organizadorjec.R;
 
 
@@ -20,20 +23,21 @@ public class InicioF extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_inicio, container, false);
 
+        Bundle bundle=getActivity().getIntent().getExtras();
+        int identificar = bundle.getInt("identificador");
+        SQLite admin = new SQLite(getContext(),"administracion",null,1);
+        SQLiteDatabase bd = admin.getWritableDatabase();
 
 
+        Cursor buscador = bd.rawQuery("select nombre_tarea from asignacion where id_usuario='" + identificar + "' ", null);
+        String [] menuDias = new String[buscador.getCount()];
 
-
-        String[] menuDias = {   "TAAAARREEEAAAA!!!!!!",
-                                "Trabajo",
-                                "Salida",
-                "mas",
-                "mas",
-                "mas",
-                "Tareaaaaaaaaa",
-                "Trabajo",
-                "Salida"};
-
+        int i=0;
+        while (buscador.moveToNext()){
+            String contenedor = buscador.getString(buscador.getColumnIndex("nombre_tarea"));
+            menuDias[i]=contenedor;
+            i++;
+        }
         String[] menu15Das = {  "Tareaaaaaaa",
                                 "Trabajo",
                                 "Salida"};

@@ -1,0 +1,83 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FracmentPopUp.ConfiguracionAtributoF">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Inserte su atributo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:gravity="center"
+            android:textSize="24sp"
+            tools:textColor="@android:color/holo_blue_dark" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="36dp" />
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etnombreatributo"
+            android:hint="Nombre del atributo a insertar"
+            android:gravity="center"
+            android:layout_width="match_parent" />
+
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="36dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="36dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:text="Agregar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/agregaratributo"
+                android:layout_weight="1"
+                style="@android:style/Widget.Button"/>
+            <Button
+                android:text="Consultar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/editaratributo"
+                android:layout_weight="1"
+                style="@android:style/Widget.Button"/>
+            <Button
+                android:text="Borrar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/borraratributo"
+                android:layout_weight="1"
+                style="@android:style/Widget.Button"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

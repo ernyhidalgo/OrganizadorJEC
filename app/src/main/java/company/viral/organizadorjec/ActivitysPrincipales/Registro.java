@@ -3,6 +3,7 @@ package company.viral.organizadorjec.ActivitysPrincipales;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import company.viral.organizadorjec.Clases.SQLite;
 import company.viral.organizadorjec.R;
 
 public class Registro extends AppCompatActivity {
@@ -42,11 +44,26 @@ public class Registro extends AppCompatActivity {
         String auxn = aetidr.getText().toString();  //tomamos el nombre
         String auxp = aetpassr.getText().toString();//tomamos la clave
         String auxc = aetpasscr.getText().toString();//con este validamos la clave
+        //un cursor para ver la tabla y validar que no alla usuario repetidos
+        Cursor fila;
+        //abrir e instanciar la base de datos
+        SQLite admin = new SQLite(this,"administracion", null, 1);
+        SQLiteDatabase bd = admin.getWritableDatabase();
+        //recorremos la base de datos a ver si existe la variable----------------------------------
+        fila=bd.rawQuery("select id from usuarios where nombre='"+auxn+"'",null);
 
+        if (fila.moveToFirst()==true){
+            aetidr.setText("");
+            aetpassr.setText("");
+            aetpasscr.setText("");
+            Toast.makeText(getApplicationContext(), "Usuario ya existe", Toast.LENGTH_LONG).show();
+
+            bd.close();
+        //-------------------------------------------------------------------------------------------
+        }else if (auxn.isEmpty()) {
         //verificamos QUE NADA QUEDE SIN LLENAR!!!
-
         //si la variable que acepta el nombre esta vacia nos pedira ingresar usuario
-        if (auxn.isEmpty()) {
+
 
             Toast.makeText(getApplicationContext(), "Ingrese un Usuario", Toast.LENGTH_LONG).show();
 
@@ -58,13 +75,6 @@ public class Registro extends AppCompatActivity {
 
             //si la clave de confirmacion es igual a la clave entonces guardalo en el sistema
         } else if (auxp.equals(auxc)) {
-
-            //abrimos la base de datos
-            SQLite admin = new SQLite(this,"administracion", null, 1);
-
-            //creamos variable re-escribible
-            SQLiteDatabase bd = admin.getWritableDatabase();
-
             //creamos un contenedor llamado registro
             ContentValues registro = new ContentValues();
 
@@ -78,9 +88,7 @@ public class Registro extends AppCompatActivity {
 
             // los inserto en la base de datos diciendo:
             //variable db (creada arriba) insertara los valores EN la tabla "usuarios", null, con el contenido de "registro"
-
             bd.insert("usuarios", null, registro);
-
             //cerramos bd
             bd.close();
 

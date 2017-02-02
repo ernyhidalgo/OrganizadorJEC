@@ -23,13 +23,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Menucentral"
-            android:label="@string/title_activity_menucentral"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".ActivitysPrincipales.MenuCentral"
             android:label="@string/title_activity_menu_central"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <receiver android:name=".Clases.AlarmaNotificacionReciver"/>
     </application>
 
 </manifest>

@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import company.viral.organizadorjec.Clases.SQLite;
 import company.viral.organizadorjec.R;
 
 //aqui empieza...
@@ -78,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }else {
+            aetid.setText("");
+            aetpass.setText("");
 
             Toast.makeText(getApplicationContext(), "Usuario o contraseña erroneo", Toast.LENGTH_LONG).show();
         }

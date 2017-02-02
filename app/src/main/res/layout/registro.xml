@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Ingrese su contraseña"
-                android:inputType="textPersonName"
+                android:inputType="textPassword"
                 android:ems="10"
                 android:id="@+id/etpassr"
                 android:layout_weight="0.63" />
@@ -56,7 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Repita su contraseña"
-                android:inputType="textPersonName"
+                android:inputType="textPassword"
                 android:ems="10"
                 android:id="@+id/etpasscr"
                 android:layout_weight="1" />

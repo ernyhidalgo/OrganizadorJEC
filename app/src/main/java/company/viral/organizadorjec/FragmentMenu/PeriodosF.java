@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import company.viral.organizadorjec.R;
-import company.viral.organizadorjec.ActivitysPrincipales.SQLite;
+import company.viral.organizadorjec.Clases.SQLite;
 
 
 public class PeriodosF extends Fragment {

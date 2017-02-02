@@ -2,8 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FracmentPopUp.ConfiguracionActividadF"
-    android:background="#767575">
+    tools:context=".FracmentPopUp.ConfiguracionActividadF">
 
 
     <!-- TODO: Update blank fragment layout -->
@@ -11,10 +10,124 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <ListView
+        <TextView
+            android:text="Registro de Actividades"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="24sp"
+            tools:textColor="@color/colorPrimary"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:text="Fecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnfragfecha"
+                android:layout_weight="1"
+                style="@android:style/Widget.Button" />
+
+            <TextView
+
+                android:text="*Fecha de entrega*"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/fechaentrega"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_weight="1"
+                tools:textColor="@android:color/holo_blue_dark" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            EditText
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/etnombreactividad"
+                android:hint="Intoduzca su Actividad"
+                android:layout_width="match_parent" />
+
+            <TextView
+                android:text="Elija una materia:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView8" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spimateria"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="35dp" />
+
+            <TextView
+                android:text="Elija una tarea:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView11" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spitarea" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:hint="Si lo desea ingrese comentarios"
+                android:id="@+id/etcomentarioactividad" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:text="Agregar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnagregaractividad"
+                android:layout_weight="1"
+                style="@android:style/Widget.Button"
+                />
+
+            <Button
+                android:text="Editar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button"
+                android:layout_weight="1"
+                style="@android:style/Widget.Button" />
+        </LinearLayout>
+
     </LinearLayout>
+
 </FrameLayout>
